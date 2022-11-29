@@ -1,0 +1,27 @@
+{
+  "name": "backend1122",
+  "version": "1.0.0",
+  "description": "Car maintenance application for Stellantis Module 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/palmex/backend1122.git"
+  },
+  "keywords": [
+    "car",
+    "stellantis"
+  ],
+  "author": "Alex Postlmayr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/palmex/backend1122/issues"
+  },
+  "homepage": "https://github.com/palmex/backend1122#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
