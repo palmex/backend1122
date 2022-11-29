@@ -8,9 +8,9 @@ app.use(
 )
 
 // This is our first route!
-app.get('/', (request,response)=>{
-    console.log(request)
-    response.json({"welcome":"class"})
+app.get('/welcome', (request,response)=>{
+    // console.log(request)
+    response.json({"welcome":"Welcome Class of OU-Stellantis Module 3!"})
 })
 
 
