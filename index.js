@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const db = require('./db')
 
 app.use(express.json())
 app.use(
@@ -16,6 +17,17 @@ app.get('/welcome', (request,response)=>{
 app.post('/echo', (request,response)=>{
     console.log("echo contents: " ,request.body)
     response.json(request.body)
+})
+
+app.get('/dbtest', (request,response)=>{
+    db.query("SELECT * FROM cars", (error,results)=>{
+        if (error){
+            console.log(error)
+            response.status(500).json(error)
+        }
+        result = results.rows
+        response.status(200).json(result)
+    })
 })
 
 
