@@ -13,6 +13,11 @@ app.get('/welcome', (request,response)=>{
     response.json({"welcome":"Welcome Class of OU-Stellantis Module 3!"})
 })
 
+app.post('/echo', (request,response)=>{
+    console.log("echo contents: " ,request.body)
+    response.json(request.body)
+})
+
 
 app.listen(port, ()=>{
     console.log(`Listening on port localhost:${port}.`)
