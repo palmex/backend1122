@@ -2,11 +2,14 @@ const express = require('express')
 const app = express()
 const port = 3000
 const db = require('./db')
+const carsRouter = require('./routes/cars')
 
 app.use(express.json())
 app.use(
     express.urlencoded({extended:true})
 )
+
+app.use('/cars', carsRouter)
 
 // This is our first route!
 app.get('/welcome', (request,response)=>{
@@ -19,16 +22,6 @@ app.post('/echo', (request,response)=>{
     response.json(request.body)
 })
 
-app.get('/dbtest', (request,response)=>{
-    db.query("SELECT * FROM cars", (error,results)=>{
-        if (error){
-            console.log(error)
-            response.status(500).json(error)
-        }
-        result = results.rows
-        response.status(200).json(result)
-    })
-})
 
 
 app.listen(port, ()=>{
