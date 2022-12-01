@@ -3,6 +3,7 @@ const app = express()
 const port = 3000
 const db = require('./db')
 const carsRouter = require('./routes/cars')
+const usersRouter = require('./routes/users')
 
 app.use(express.json())
 app.use(
@@ -10,6 +11,7 @@ app.use(
 )
 
 app.use('/cars', carsRouter)
+app.use('/users', usersRouter)
 
 // This is our first route!
 app.get('/welcome', (request,response)=>{
